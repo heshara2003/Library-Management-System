@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System</title>
    
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/Libry_Management_System/assets/css/style.css">
      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <!-- Navigation Bar get in boostrap -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/Libry_Management_System/index.php">Navbar scroll</a>
+        <a class="navbar-brand" href="/Libry_Management_System/index.php">📚 Library Management System</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Link
+                Management
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/Libry_Management_System/features/user_management.php">User Management</a></li>
@@ -35,10 +35,10 @@
               </ul>
             </li>
              <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/Libry_Management_System/features/book_borrow/borrow.php">Borroow Details</a>
+              <a class="nav-link active" aria-current="page" href="/Libry_Management_System/features/book_borrow/borrow.php">Borrow Details</a>
             </li>
              <li class="nav-item">
-              <button class="nav-link active" aria-current="page" onclick="logout()">LogOut</button>
+              <button class="nav-link active btn btn-link" aria-current="page" onclick="logout()">LogOut</button>
             </li>
           </ul>
         </div>
@@ -48,12 +48,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function logout() {
-            fetch('/Libry_management_System/Session/logout.php')
+            fetch('/Libry_Management_System/Session/logout.php')
             .then(response => response.json())
             .then(data => {
                 if(data.status === 'success') {
                     console.log('Logged out successfully');
-                    window.location.href = '/Libry_management_System/auth/login.php';
+                    window.location.href = '/Libry_Management_System/auth/login.php';
                 } else {
                     console.error('Logout failed:', data.message);
                     alert('Logout failed: ' + (data.message || 'Unknown error'));

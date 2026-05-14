@@ -7,7 +7,7 @@ $current_user = current_user()['first_name'];
 
 $user_count = $conn->query("SELECT COUNT(*) as total FROM user")->fetch_assoc()['total'];
 $member_count = $conn->query("SELECT COUNT(*) as total FROM member")->fetch_assoc()['total'];
-$borrowed_count = $conn->query("SELECT COUNT(*) as total FROM bookborrower where borrow_status='Borrowed' ")->fetch_assoc()['total'];
+$borrowed_count = $conn->query("SELECT COUNT(*) as total FROM bookborrower where borrow_status='borrowed' ")->fetch_assoc()['total'];
 $book_count = $conn->query("SELECT COUNT(*) as total FROM book")->fetch_assoc()['total'];
 
 ?>
