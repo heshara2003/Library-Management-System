@@ -2,7 +2,7 @@
 
 // App config
 $APP_NAME     = 'Library Management System';
-$BASE_URL     = '/Libry_management_System';
+$BASE_URL     = '/Libry_Management_System';
 $SESSION_NAME = 'library_management_sess';
 
 // Session
@@ -32,7 +32,7 @@ function require_login(): void
 function require_role($role): void
 {
     if (!is_logged_in() || current_user()['role'] !== $role) {
-        header('Location: ' . $GLOBALS['BASE_URL'] . 'auth/login.php');
+        header('Location: ' . $GLOBALS['BASE_URL'] . '/auth/login.php');
         exit;
     }
 }
