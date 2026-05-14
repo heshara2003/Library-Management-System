@@ -14,7 +14,7 @@ try{
     }
 
 }
-catch(Exeption $e){
+catch(Exception $e){
     //echo json_encode(['dbstatus' => 'error', 'message' => 'Connection failed: ' . $e->getMessage()]);
 }
 ?>
