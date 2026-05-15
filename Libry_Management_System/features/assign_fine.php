@@ -1,6 +1,7 @@
 <?php
 require_once('../config/db.php');
 require_once('../Session/session.php');
+require_login();
 include('../includes/header.php');
 
 $query = "
@@ -16,8 +17,8 @@ $result = $stmt->get_result();
 ?>
 
 <style>
-    .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
-    .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; border-radius: 5px; }
+    .custom-modal { display: none; position: fixed; z-index: 1056; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
+    .custom-modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; border-radius: 5px; }
     .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
     .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
     .form-group { margin-bottom: 15px; }
@@ -87,24 +88,24 @@ $result = $stmt->get_result();
     </div>
 
     <!-- Add Fine Modal -->
-    <div id="fineModal" class="modal">
-        <div class="modal-content">
+    <div id="fineModal" class="custom-modal">
+        <div class="custom-modal-content">
             <span class="close" onclick="toggleModal(false)">&times;</span>
             <h3>Assign Fine</h3>
             <form id="fineForm">
                 <div class="form-group">
                     <label for="fineID">Fine ID:</label>
-                    <input type="text" id="fineID" name="fine_id" placeholder="e.g., F001" required>
+                    <input type="text" id="fineID" name="fine_id" placeholder="e.g., F001" maxlength="5" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="memberID">Member ID:</label>
-                    <input type="text" id="memberID" name="member_id" placeholder="e.g., M001" required>
+                    <input type="text" id="memberID" name="member_id" placeholder="e.g., M001" maxlength="5" required>
                 </div>
 
                 <div class="form-group">
                     <label for="bookID">Book ID:</label>
-                    <input type="text" id="bookID" name="book_id" placeholder="e.g., B001" required>
+                    <input type="text" id="bookID" name="book_id" placeholder="e.g., B001" maxlength="5" required>
                 </div>
 
                 <div class="form-group">
@@ -118,8 +119,8 @@ $result = $stmt->get_result();
     </div>
 
     <!-- Update Fine Modal -->
-    <div id="updateModal" class="modal">
-        <div class="modal-content">
+    <div id="updateModal" class="custom-modal">
+        <div class="custom-modal-content">
             <span class="close" onclick="toggleUpdateModal(false)">&times;</span>
             <h3>Update Fine</h3>
             <form id="updateForm">
@@ -148,18 +149,20 @@ $result = $stmt->get_result();
     const updateForm = document.getElementById('updateForm');
 
     function toggleModal(show) {
-        if(show) document.getElementById('fineModal').classList.add('active');
-        else document.getElementById('fineModal').classList.remove('active');
+        if(show) document.getElementById('fineModal').style.display = 'block';
+        else document.getElementById('fineModal').style.display = 'none';
     }
 
     function toggleUpdateModal(show) {
-        if(show) document.getElementById('updateModal').classList.add('active');
-        else document.getElementById('updateModal').classList.remove('active');
+        if(show) document.getElementById('updateModal').style.display = 'block';
+        else document.getElementById('updateModal').style.display = 'none';
     }
 
     window.onclick = function(event) {
-        if (event.target.classList.contains('modern-modal-overlay')) {
+        if (event.target == document.getElementById('fineModal')) {
             toggleModal(false);
+        }
+        if (event.target == document.getElementById('updateModal')) {
             toggleUpdateModal(false);
         }
     }

@@ -11,6 +11,7 @@ $result = $stmt->get_result();
 ?>
 
 
+
 <style>
     .popup-overlay {
         display: none;
@@ -116,7 +117,7 @@ if ($result && $result->num_rows > 0) {
 <script>
 
     function openPopup(id, fname, lname, uname, email) {
-        document.getElementById("myPopup").classList.add("active"); //show popup
+        document.getElementById("myPopup").style.display = "block"; //show popup
         document.getElementById("edit_user_id").value = id;
         document.getElementById("edit_first_name").value = fname;
         document.getElementById("edit_last_name").value = lname;
@@ -125,7 +126,7 @@ if ($result && $result->num_rows > 0) {
     }
 
     function closePopup() {
-        document.getElementById("myPopup").classList.remove("active");
+        document.getElementById("myPopup").style.display = "none";
     }
 
     const updateform = document.getElementById('update_user');

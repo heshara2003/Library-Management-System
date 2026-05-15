@@ -1,5 +1,7 @@
 <?php
 require_once('../config/db.php');
+require_once('../Session/session.php');
+require_login();
 
 header('Content-Type: application/json');
 
@@ -12,6 +14,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Server-side validation
     if (empty($fine_id) || empty($member_id) || empty($book_id) || empty($fine_amount)) {
         echo json_encode(['status' => 'error', 'message' => 'All fields are required.']);
+        exit;
+    }
+
+    if(strlen($fine_id) > 5 || $fine_id[0] != 'F'){
+        echo json_encode(['status' => 'error', 'message' => 'Invalid Fine ID format. Must start with F and be max 5 chars.']);
+        exit;
+    }
+    if(strlen($member_id) > 5 || $member_id[0] != 'M'){
+        echo json_encode(['status' => 'error', 'message' => 'Invalid Member ID format. Must start with M and be max 5 chars.']);
+        exit;
+    }
+    if(strlen($book_id) > 5 || $book_id[0] != 'B'){
+        echo json_encode(['status' => 'error', 'message' => 'Invalid Book ID format. Must start with B and be max 5 chars.']);
         exit;
     }
 

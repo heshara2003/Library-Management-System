@@ -1,5 +1,7 @@
 <?php
 require_once('../config/db.php');
+require_once('../Session/session.php');
+require_login();
 
 header('Content-Type: application/json');
 
@@ -10,6 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Server-side validation
     if (empty($fine_id) || empty($fine_amount)) {
         echo json_encode(['status' => 'error', 'message' => 'Fine ID and Fine Amount are required.']);
+        exit;
+    }
+
+    if(strlen($fine_id) > 5 || $fine_id[0] != 'F'){
+        echo json_encode(['status' => 'error', 'message' => 'Invalid Fine ID format. Must start with F and be max 5 chars.']);
         exit;
     }
 

@@ -13,7 +13,7 @@
     <!-- Navigation Bar get in boostrap -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/Libry_Management_System/index.php">📚 Library Management System</a>
+        <a class="navbar-brand" href="/Libry_Management_System/index.php">Lab Manage</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +24,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Management
+                Link
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/Libry_Management_System/features/user_management.php">User Management</a></li>
@@ -35,10 +35,10 @@
               </ul>
             </li>
              <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/Libry_Management_System/features/book_borrow/borrow.php">Borrow Details</a>
+              <a class="nav-link active" aria-current="page" href="/Libry_Management_System/features/book_borrow/borrow.php">Borroow Details</a>
             </li>
              <li class="nav-item">
-              <button class="nav-link active btn btn-link" aria-current="page" onclick="logout()">LogOut</button>
+              <button class="nav-link active" aria-current="page" onclick="logout()">LogOut</button>
             </li>
           </ul>
         </div>

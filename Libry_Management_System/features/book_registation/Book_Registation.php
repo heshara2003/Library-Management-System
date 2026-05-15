@@ -20,6 +20,7 @@ require_login();
             background-color: #ffffff; 
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+        }
 
         h2 {
             font-size: 2.2em;
@@ -128,7 +129,6 @@ require_login();
         }
     </style>
 </head>
-
 
 <div class="container">
 
