@@ -59,7 +59,7 @@ The database consists of the following primary tables:
 
 ## 👤 Developer
 * **Name:** P.H.H.S. Jayasinghe
-* **Contribution:** Lead Developer / [Insert your specific feature here, e.g., Database Design & User Auth]
+* **Contribution:** Lead Developer 
 
 ---
 *Developed for the Final Web Application Development P.H.H.S Jayasinghe.*
