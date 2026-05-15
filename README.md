@@ -62,4 +62,4 @@ The database consists of the following primary tables:
 * **Contribution:** Lead Developer / [Insert your specific feature here, e.g., Database Design & User Auth]
 
 ---
-*Developed for the Final Web Application Development Group Assignment.*
+*Developed for the Final Web Application Development P.H.H.S Jayasinghe.*
